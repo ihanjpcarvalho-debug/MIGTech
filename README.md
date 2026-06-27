@@ -1,1 +1,1 @@
-# MIGTechc
+# MIGTech
