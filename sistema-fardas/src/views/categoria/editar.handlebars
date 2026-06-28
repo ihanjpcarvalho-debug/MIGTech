@@ -1,0 +1,49 @@
+<h1>Editar Categoria</h1>
+
+<form action="/categorias/{{categoria.id}}" method="POST">
+
+  <div>
+
+    <label>Nome</label><br />
+
+    <input type="text" name="nome" value="{{categoria.nome}}" required />
+
+  </div>
+
+  <br />
+
+  <div>
+
+    <label>Situação</label><br />
+
+    <select name="situacao">
+
+      <option value="Novo fardamento">
+        Novo Fardamento
+      </option>
+
+      <option value="Substituição">
+        Substituição
+      </option>
+
+      <option value="Troca">
+        Troca
+      </option>
+
+    </select>
+
+  </div>
+
+  <br />
+
+  <button type="submit">
+    Salvar Alterações
+  </button>
+
+</form>
+
+<br />
+
+<a href="/categorias">
+  Voltar
+</a>

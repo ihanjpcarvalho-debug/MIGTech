@@ -1,0 +1,44 @@
+<h1>Cadastrar Categoria</h1>
+
+<form action="/categorias" method="POST">
+
+  <div>
+    <label>Nome da Categoria</label><br />
+    <input type="text" name="nome" required />
+  </div>
+
+  <br />
+
+  <div>
+    <label>Situação</label><br />
+
+    <select name="situacao">
+
+      <option value="Novo fardamento">
+        Novo Fardamento
+      </option>
+
+      <option value="Substituição">
+        Substituição
+      </option>
+
+      <option value="Troca">
+        Troca
+      </option>
+
+    </select>
+  </div>
+
+  <br />
+
+  <button type="submit">
+    Cadastrar
+  </button>
+
+</form>
+
+<br />
+
+<a href="/categorias">
+  Voltar
+</a>

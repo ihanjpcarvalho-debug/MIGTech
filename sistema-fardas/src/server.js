@@ -5,7 +5,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 
 sequelize
-  .authenticate()
+  .sync()
   .then(() => {
     console.log("Banco conectado!");
 
