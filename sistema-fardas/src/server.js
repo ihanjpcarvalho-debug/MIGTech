@@ -1,12 +1,11 @@
 const app = require("./app");
 const sequelize = require("./config/bd");
-const sequelize = require("./config/database");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
 
 sequelize
-  .authenticate()
+  .sync()
   .then(() => {
     console.log("Banco conectado!");
 
