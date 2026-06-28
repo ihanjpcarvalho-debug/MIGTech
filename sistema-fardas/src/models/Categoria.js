@@ -1,29 +1,39 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/bd");
 
-const categoria = sequelize.define(
-  "categoria",
+const Categoria = sequelize.define(
+  "Categoria",
   {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
+
       autoIncrement: true,
-    },
-    nome: {
-      type: DataTypes.STRING,
-      unique: true,
-      allowNull: false,
+
+      primaryKey: true,
     },
 
-    situacao: {
-      type: DataTypes.ENUM("Novo fardamento", "Substituição", "Troca"),
-      defaultValue: "Novo fardamento",
+    nome: {
+      type: DataTypes.STRING(40),
+
+      allowNull: false,
+
+      unique: true,
+    },
+    descricao: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    ativa: {
+      type: DataTypes.BOOLEAN,
+
+      defaultValue: true,
     },
   },
   {
     tableName: "Categoria",
+
     timestamps: true,
   },
 );
 
-module.exports = categoria;
+module.exports = Categoria;

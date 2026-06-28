@@ -1,38 +1,61 @@
-<h1>Cadastrar Categoria</h1>
+<h2>Nova Categoria</h2>
 
 <form action="/categorias" method="POST">
 
-  <div>
-    <label>Nome da Categoria</label><br />
-    <input type="text" name="nome" required />
-  </div>
+  <label>
+
+    Nome
+
+  </label>
 
   <br />
 
-  <div>
-    <label>Situação</label><br />
+  <input type="text" name="nome" required />
 
-    <select name="situacao">
+  <br /><br />
 
-      <option value="Novo fardamento">
-        Novo Fardamento
-      </option>
+  <label>
 
-      <option value="Substituição">
-        Substituição
-      </option>
+    Descrição
 
-      <option value="Troca">
-        Troca
-      </option>
-
-    </select>
-  </div>
+  </label>
 
   <br />
 
-  <button type="submit">
+  <input type="text" name="descricao" />
+
+  <br /><br />
+
+  <label>
+
+    Categoria ativa?
+
+  </label>
+
+  <br />
+
+  <select name="ativa">
+
+    <option value="true">
+
+      Sim
+
+    </option>
+
+    <option value="false">
+
+      Não
+
+    </option>
+
+  </select>
+
+  <br /><br />
+
+  <button>
+
     Cadastrar
+
   </button>
 
 </form>
@@ -40,5 +63,7 @@
 <br />
 
 <a href="/categorias">
+
   Voltar
+
 </a>
