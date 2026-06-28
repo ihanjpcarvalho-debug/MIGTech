@@ -1,25 +1,31 @@
 const express = require("express");
-console.log("categoriaController carregado");
+
 const router = express.Router();
 
 const categoriaController = require("../controllers/categoriaController");
 
-// Listar todas as categorias
+// Listar
+
 router.get("/", categoriaController.listar);
 
-// Abrir formulário de cadastro
+// Formulário
+
 router.get("/nova", categoriaController.formCadastrar);
 
-// Salvar nova categoria
+// Criar
+
 router.post("/", categoriaController.criar);
 
-// Abrir formulário de edição
+// Editar
+
 router.get("/:id/editar", categoriaController.formEditar);
 
-// Atualizar categoria
+// Atualizar
+
 router.post("/:id", categoriaController.atualizar);
 
-// Excluir categoria
+// Excluir
+
 router.post("/:id/excluir", categoriaController.excluir);
 
 module.exports = router;

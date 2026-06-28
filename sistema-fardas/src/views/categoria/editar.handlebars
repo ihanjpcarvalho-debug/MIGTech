@@ -1,43 +1,61 @@
-<h1>Editar Categoria</h1>
+<h2>Editar Categoria</h2>
 
 <form action="/categorias/{{categoria.id}}" method="POST">
 
-  <div>
+  <label>
 
-    <label>Nome</label><br />
+    Nome
 
-    <input type="text" name="nome" value="{{categoria.nome}}" required />
-
-  </div>
+  </label>
 
   <br />
 
-  <div>
+  <input type="text" name="nome" value="{{categoria.nome}}" required />
 
-    <label>Situação</label><br />
+  <br /><br />
 
-    <select name="situacao">
+  <label>
 
-      <option value="Novo fardamento">
-        Novo Fardamento
-      </option>
+    Descrição
 
-      <option value="Substituição">
-        Substituição
-      </option>
-
-      <option value="Troca">
-        Troca
-      </option>
-
-    </select>
-
-  </div>
+  </label>
 
   <br />
 
-  <button type="submit">
-    Salvar Alterações
+  <input type="text" name="descricao" value="{{categoria.descricao}}" />
+
+  <br /><br />
+
+  <label>
+
+    Ativa
+
+  </label>
+
+  <br />
+
+  <select name="ativa">
+
+    <option value="true">
+
+      Sim
+
+    </option>
+
+    <option value="false">
+
+      Não
+
+    </option>
+
+  </select>
+
+  <br /><br />
+
+  <button>
+
+    Salvar
+
   </button>
 
 </form>
@@ -45,5 +63,7 @@
 <br />
 
 <a href="/categorias">
+
   Voltar
+
 </a>
