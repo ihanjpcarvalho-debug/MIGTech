@@ -1,75 +1,30 @@
-<h2>Categorias</h2>
+<h1>Categorias</h1>
 
-<a href="/categorias/nova">
-
-  Cadastrar nova categoria
-
-</a>
+<a href="/categorias/nova">Nova Categoria</a>
 
 <br /><br />
 
 <table border="1">
-
   <tr>
-
     <th>ID</th>
-
     <th>Nome</th>
-
-    <th>Descrição</th>
-
-    <th>Ativa</th>
-
     <th>Ações</th>
-
   </tr>
 
   {{#each categorias}}
-
     <tr>
-
-      <td>{{id}}</td>
-
-      <td>{{nome}}</td>
-
-      <td>{{descricao}}</td>
-
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
       <td>
-
-        {{#if ativa}}
-
-          Sim
-
-        {{else}}
-
-          Não
-
-        {{/if}}
-
-      </td>
-
-      <td>
-
-        <a href="/categorias/{{id}}/editar">
-
-          Editar
-
-        </a>
-
-        <form action="/categorias/{{id}}/excluir" method="POST">
-
-          <button>
-
-            Excluir
-
-          </button>
-
+        <a href="/categorias/{{this.id}}/editar">Editar</a>
+        <form
+          action="/categorias/{{this.id}}/excluir"
+          method="POST"
+          style="display:inline;"
+        >
+          <button type="submit">Excluir</button>
         </form>
-
       </td>
-
     </tr>
-
   {{/each}}
-
 </table>

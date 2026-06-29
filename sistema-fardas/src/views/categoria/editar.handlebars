@@ -1,12 +1,8 @@
-<h2>Editar Categoria</h2>
+<h1>Editar Categoria</h1>
 
 <form action="/categorias/{{categoria.id}}" method="POST">
 
-  <label>
-
-    Nome
-
-  </label>
+  <label>Nome</label>
 
   <br />
 
@@ -14,45 +10,7 @@
 
   <br /><br />
 
-  <label>
-
-    Descrição
-
-  </label>
-
-  <br />
-
-  <input type="text" name="descricao" value="{{categoria.descricao}}" />
-
-  <br /><br />
-
-  <label>
-
-    Ativa
-
-  </label>
-
-  <br />
-
-  <select name="ativa">
-
-    <option value="true">
-
-      Sim
-
-    </option>
-
-    <option value="false">
-
-      Não
-
-    </option>
-
-  </select>
-
-  <br /><br />
-
-  <button>
+  <button type="submit">
 
     Salvar
 

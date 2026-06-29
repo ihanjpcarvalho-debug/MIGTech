@@ -1,5 +1,3 @@
-//Nao mexam na pagina, so se for pra configurar a rota de vcs!!!
-
 const express = require("express");
 const cors = require("cors");
 const { engine } = require("express-handlebars");
@@ -12,18 +10,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const categoriaRoutes = require("./routes/categoriaRoutes");
+const usuarioRoutes = require("./routes/usuarioRoutes");
+
 app.use("/categorias", categoriaRoutes);
+app.use("/usuarios", usuarioRoutes);
 
-// Receber dados de formulários
-app.use(express.urlencoded({ extended: true }));
-
-// Configurar Handlebars
-app.engine("handlebars", engine());
+app.engine(
+  "handlebars",
+  engine({
+    defaultLayout: "main",
+    extname: ".handlebars",
+    helpers: {
+      eq: (a, b) => a === b,
+    },
+  }),
+);
 app.set("view engine", "handlebars");
-
 app.set("views", path.join(__dirname, "views"));
-
-// CSS
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
