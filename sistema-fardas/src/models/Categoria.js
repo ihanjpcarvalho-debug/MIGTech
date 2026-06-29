@@ -6,32 +6,17 @@ const Categoria = sequelize.define(
   {
     id: {
       type: DataTypes.INTEGER,
-
-      autoIncrement: true,
-
       primaryKey: true,
+      autoIncrement: true,
     },
-
     nome: {
-      type: DataTypes.STRING(40),
-
+      type: DataTypes.STRING(50),
       allowNull: false,
-
       unique: true,
-    },
-    descricao: {
-      type: DataTypes.STRING(100),
-      allowNull: true,
-    },
-    ativa: {
-      type: DataTypes.BOOLEAN,
-
-      defaultValue: true,
     },
   },
   {
     tableName: "Categoria",
-
     timestamps: true,
   },
 );

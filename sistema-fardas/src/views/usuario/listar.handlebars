@@ -1,0 +1,36 @@
+<h1>Usuários</h1>
+
+<a href="/usuarios/novo">Novo Usuário</a>
+
+<br /><br />
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Perfil</th>
+    <th>Categoria</th>
+    <th>Ações</th>
+  </tr>
+
+  {{#each usuarios}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.perfil}}</td>
+      <td>{{#if this.categoria}}{{this.categoria.nome}}{{else}}Sem categoria{{/if}}</td>
+      <td>
+        <a href="/usuarios/{{this.id}}/editar">Editar</a>
+        <form
+          action="/usuarios/{{this.id}}/excluir"
+          method="POST"
+          style="display:inline;"
+        >
+          <button type="submit">Excluir</button>
+        </form>
+      </td>
+    </tr>
+  {{/each}}
+</table>

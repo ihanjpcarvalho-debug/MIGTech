@@ -1,19 +1,16 @@
-USE sistema_fardas;
+use sistema_fardas;
 
-DROP TABLE IF EXISTS categoria;
+DROP TABLE IF EXISTS Categoria;
 
-CREATE TABLE categoria(
+CREATE TABLE Categoria (
 
-id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
 
-nome VARCHAR(50) NOT NULL UNIQUE,
+    nome VARCHAR(50) NOT NULL UNIQUE,
 
-descricao VARCHAR(100),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
 
-createdAt DATETIME,
-
-updatedAt DATETIME
-
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Usuario(

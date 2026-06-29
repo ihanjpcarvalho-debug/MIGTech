@@ -1,0 +1,31 @@
+<h1>Editar Usuário</h1>
+
+<form action="/usuarios/{{usuario.id}}" method="POST">
+  <label>Nome</label><br />
+  <input type="text" name="nome" value="{{usuario.nome}}" required /><br /><br />
+
+  <label>Email</label><br />
+  <input type="email" name="email" value="{{usuario.email}}" required /><br /><br />
+
+  <label>Senha (deixe em branco para manter)</label><br />
+  <input type="password" name="senha" /><br /><br />
+
+  <label>Perfil</label><br />
+  <select name="perfil">
+    <option value="Funcionário" {{#if (eq usuario.perfil "Funcionário")}}selected{{/if}}>Funcionário</option>
+    <option value="Administrador" {{#if (eq usuario.perfil "Administrador")}}selected{{/if}}>Administrador</option>
+  </select><br /><br />
+
+  <label>Categoria</label><br />
+  <select name="categoriaId">
+    <option value="">Sem categoria</option>
+    {{#each categorias}}
+      <option value="{{this.id}}" {{#if (eq ../usuario.categoriaId this.id)}}selected{{/if}}>{{this.nome}}</option>
+    {{/each}}
+  </select><br /><br />
+
+  <button type="submit">Salvar</button>
+</form>
+
+<br />
+<a href="/usuarios">Voltar</a>
