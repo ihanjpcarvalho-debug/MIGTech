@@ -7,4 +7,4 @@ temos 3 cruds principais:
 Categoria
 Fardamento 
 Movimentações/Gerenciamento
-e o de usuarios, que não é o foco.
+
