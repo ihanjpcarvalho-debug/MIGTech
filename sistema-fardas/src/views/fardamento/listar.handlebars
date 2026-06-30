@@ -1,0 +1,42 @@
+<h2>Fardamentos</h2>
+<a href="/fardamentos/novo">Novo fardamento</a>
+
+{{#if fardamentos.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>Camisa</th>
+        <th>Short</th>
+        <th>Tamanho</th>
+        <th>Quantidade</th>
+        <th>Categoria</th>
+        <th>Entrega</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each fardamentos}}
+        <tr>
+          <td>{{this.camisa}}</td>
+          <td>{{this.short}}</td>
+          <td>{{this.tamanho}}</td>
+          <td>{{this.quantidade}}</td>
+          <td>{{this.categoriaNome}}</td>
+          <td>{{this.entrega}}</td>
+          <td>
+            <a href="/fardamentos/{{this.id}}/editar">Editar</a>
+            <form
+              action="/fardamentos/{{this.id}}/excluir"
+              method="POST"
+              style="display:inline;"
+            >
+              <button type="submit">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Nenhum fardamento cadastrado ainda.</p>
+{{/if}}
