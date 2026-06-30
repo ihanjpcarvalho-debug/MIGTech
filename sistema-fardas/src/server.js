@@ -2,7 +2,7 @@ const app = require("./app");
 const sequelize = require("./config/bd");
 require("dotenv").config();
 
-require("./models/usuario");
+require("./models/aluno");
 require("./models/Categoria");
 require("./models/Fardamento");
 require("./models/Movimentacao");
