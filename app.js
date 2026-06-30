@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Arquivos estáticos (HTML, CSS, JS do front)
+//  (HTML, CSS, JS do front)
 app.use(express.static(path.join(__dirname, "public")));
 
 // Caminho do arquivo de dados
@@ -29,9 +29,8 @@ function salvarAlunos(alunos) {
     fs.writeFileSync(dbPath, JSON.stringify(alunos, null, 2));
 }
 
-/* =========================
-   ROTAS DA API
-========================= */
+/*
+   ROTAS DA API */
 
 // Listar todos os alunos
 app.get("/alunos", (req, res) => {
@@ -118,9 +117,9 @@ app.get("/pesquisar", (req, res) => {
     res.json(resultado);
 });
 
-/* =========================
+/*
    INICIAR SERVIDOR
-========================= */
+ */
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
