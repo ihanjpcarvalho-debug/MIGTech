@@ -1,0 +1,36 @@
+<div class="card">
+  <h2>Novo Fardamento</h2>
+  <form action="/fardamentos" method="POST" class="formulario-fardamento">
+    <label>Camisa</label>
+    <input type="text" name="camisa" required />
+
+    <label>Short</label>
+    <input type="text" name="short" required />
+
+    <label>Tamanho</label>
+    <select name="tamanho">
+      <option value="P">P</option>
+      <option value="M">M</option>
+      <option value="G">G</option>
+      <option value="GG">GG</option>
+    </select>
+
+    <label>Quantidade</label>
+    <input type="number" name="quantidade" min="1" required />
+
+    <label>Categoria</label>
+    <select name="categoriaId">
+      <option value="">Sem categoria</option>
+      {{#each categorias}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+
+    <label>Registro de Entrega</label>
+    <input type="date" name="entrega" required />
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <a href="/fardamentos">Voltar</a>
+</div>

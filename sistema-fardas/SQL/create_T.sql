@@ -35,11 +35,11 @@ updatedAt DATETIME
 );
 
 INSERT INTO Usuario (nome, matricula, email, senha, perfil) VALUES
-('maua', '2026001', 'joao@empresa.com', '123456', 'Administrador'),
+('maua', '2026001', 'maua@empresa.com', '123456', 'Administrador'),
 
-('maua2', '2026002', 'maria@empresa.com', '123456', 'Funcionario'),
+('maua2', '2026002', 'maua2@empresa.com', '123456', 'Funcionario'),
 
-('maua3', '2026003', 'pedro@empresa.com', '123456', 'Funcionario');
+('maua3', '2026003', 'maua3@empresa.com', '123456', 'Funcionario');
 
 INSERT INTO Categoria (nome) VALUES
 ('Normal'),

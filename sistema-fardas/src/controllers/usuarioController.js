@@ -4,16 +4,19 @@ const Categoria = require("../models/Categoria");
 exports.listar = async (req, res) => {
   try {
     const usuarios = await Usuario.findAll({
-      include: [{ model: Categoria, as: "categoria" }],
+      raw: true,
       order: [["id", "ASC"]],
     });
 
-    res.render("usuario/listar", {
-      usuarios: usuarios.map((u) => u.get({ plain: true })),
-    });
+    const usuariosFormatados = usuarios.map((usuario) => ({
+      ...usuario,
+      categoriaNome: "Sem categoria",
+    }));
+
+    res.render("usuario/listar", { usuarios: usuariosFormatados });
   } catch (erro) {
-    console.error(erro);
-    res.status(500).send("Erro ao listar usuários.");
+    console.error("Erro ao listar usuários:", erro);
+    res.status(500).send(`Erro ao listar usuários: ${erro.message}`);
   }
 };
 

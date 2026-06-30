@@ -10,10 +10,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const categoriaRoutes = require("./routes/categoriaRoutes");
-const usuarioRoutes = require("./routes/usuarioRoutes");
+const fardamentoRoutes = require("./routes/fardamentoRoutes");
+const movimentacaoRoutes = require("./routes/movimentacaoRoutes");
 
 app.use("/categorias", categoriaRoutes);
-app.use("/usuarios", usuarioRoutes);
+app.use("/fardamentos", fardamentoRoutes);
+app.use("/movimentacoes", movimentacaoRoutes);
 
 app.engine(
   "handlebars",
