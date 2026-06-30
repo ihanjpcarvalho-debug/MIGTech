@@ -1,4 +1,4 @@
-const Usuario = require("../models/usuario");
+const Usuario = require("../models/aluno");
 const Categoria = require("../models/Categoria");
 
 exports.listar = async (req, res) => {
