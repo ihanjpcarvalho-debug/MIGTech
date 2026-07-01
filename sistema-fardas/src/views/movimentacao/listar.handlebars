@@ -1,0 +1,40 @@
+<h2>Movimentações</h2>
+<a href="/movimentacoes/novo">Nova movimentação</a>
+
+{{#if movimentacoes.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Quantidade</th>
+        <th>Data</th>
+        <th>Fardamento</th>
+        <th>Observação</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each movimentacoes}}
+        <tr>
+          <td>{{this.tipo}}</td>
+          <td>{{this.quantidade}}</td>
+          <td>{{this.data}}</td>
+          <td>{{this.fardamento.camisa}} / {{this.fardamento.short}}</td>
+          <td>{{this.observacao}}</td>
+          <td>
+            <a href="/movimentacoes/{{this.id}}/editar">Editar</a>
+            <form
+              action="/movimentacoes/{{this.id}}/excluir"
+              method="POST"
+              style="display:inline;"
+            >
+              <button type="submit">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Nenhuma movimentação cadastrada ainda.</p>
+{{/if}}

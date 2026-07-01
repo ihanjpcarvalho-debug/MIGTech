@@ -1,0 +1,30 @@
+<div class="card">
+  <h2>Editar Movimentação</h2>
+  <form action="/movimentacoes/{{movimentacao.id}}" method="POST" class="formulario-fardamento">
+    <label>Tipo</label>
+    <select name="tipo">
+      <option value="Entrada" {{#if (eq movimentacao.tipo "Entrada")}}selected{{/if}}>Entrada</option>
+      <option value="Saída" {{#if (eq movimentacao.tipo "Saída")}}selected{{/if}}>Saída</option>
+    </select>
+
+    <label>Quantidade</label>
+    <input type="number" name="quantidade" min="1" value="{{movimentacao.quantidade}}" required />
+
+    <label>Data</label>
+    <input type="date" name="data" value="{{movimentacao.data}}" required />
+
+    <label>Fardamento</label>
+    <select name="fardamentoId" required>
+      {{#each fardamentos}}
+        <option value="{{this.id}}" {{#if (eq ../movimentacao.fardamentoId this.id)}}selected{{/if}}>{{this.camisa}} / {{this.short}}</option>
+      {{/each}}
+    </select>
+
+    <label>Observação</label>
+    <input type="text" name="observacao" value="{{movimentacao.observacao}}" />
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <a href="/movimentacoes">Voltar</a>
+</div>
