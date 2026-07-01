@@ -2,10 +2,9 @@ const app = require("./app");
 const sequelize = require("./config/bd");
 require("dotenv").config();
 
-require("./models/aluno");
 require("./models/Categoria");
 require("./models/Fardamento");
-require("./models/Movimentacao");
+require("./models/movimentacao");
 
 const Categoria = require("./models/Categoria");
 
