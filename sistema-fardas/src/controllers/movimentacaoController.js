@@ -1,5 +1,5 @@
 const Fardamento = require("../models/Fardamento");
-const Movimentacao = require("../models/Movimentacao");
+const Movimentacao = require("../models/movimentacao");
 
 exports.listar = async (req, res) => {
   try {

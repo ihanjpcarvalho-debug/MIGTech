@@ -1,5 +1,6 @@
 const Categoria = require("./Categoria");
 const Fardamento = require("./Fardamento");
+const Movimentacao = require("./movimentacao");
 
 Categoria.hasMany(Fardamento, {
   foreignKey: "categoriaId",
@@ -14,4 +15,5 @@ Fardamento.belongsTo(Categoria, {
 module.exports = {
   Categoria,
   Fardamento,
+  Movimentacao,
 };
